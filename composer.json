@@ -1,14 +1,15 @@
 {
 	"name": "rajibahmed/rake-db-migrator",
+	"description": "Rails migration for php projects",
+    "type": "console application",
+    "keywords": ["rails","migration","database"],
+    "license": "MIT",
 	"authors":[
 	{
 		"name": "Rajib Ahmed",
 		"email": "rajib.ahmed@ztorm.com"
-	},
+	}
 	],
-	"require-dev": {
-		"phpunit/phpunit": "3.7.*"
-	},
 	"require": {
 		"php": ">5.2"
 	},
