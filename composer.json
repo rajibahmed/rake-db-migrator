@@ -1,7 +1,6 @@
 {
 	"name": "rajibahmed/rake-db-migrator",
 	"description": "Rails migration for php projects",
-    "type": "console application",
     "keywords": ["rails","migration","database"],
     "license": "MIT",
 	"authors":[
