@@ -10,14 +10,7 @@
 	}
 	],
 	"require": {
-		"php": ">5.2"
+		"php": ">=5.2",
 	},
-	"minimum-stability": "dev",
-	"scripts": {
-		"post-install-cmd":[
-			" gem install bundler ",
-			" bundler install ",
-			" rake "
-		]
-	}
+	"minimum-stability": "dev"
 }
