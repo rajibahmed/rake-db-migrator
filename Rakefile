@@ -77,11 +77,15 @@ namespace :db do
   end
 
   desc "Generate migration files"
-  task :generate => :configure_connection do |t, args|
-    number =  ActiveRecord::Migrator.current_version.to_s.slice(7)
-    next_version =  ActiveRecord::Migration.next_migration_number(number)
-    File.open("#{MIGRATIONS_DIR}/#{next_version}_change_the_name.rb", 'w+') {|f|
-      f.write("class  ChangeTheName < ActiveRecord::Migration
+  task :generate,[:name] => :configure_connection do |t, args|
+    if args.nil?
+        file_name = args[:name] unless args[:name].nil?
+        class_name = args[:name].split('_').map(&:capitalize).join unless args[:name].nil?
+    end
+
+    next_version =  ActiveRecord::Migration.next_migration_number(Time.now.to_i)
+    File.open("#{MIGRATIONS_DIR}/#{next_version}_#{ file_name||'change_this' }.rb", 'w+') {|f|
+      f.write("class  #{ class_name||'ChangeThis' } < ActiveRecord::Migration
   def up
     create_table :table_name do |t|
       t.string :column_name
