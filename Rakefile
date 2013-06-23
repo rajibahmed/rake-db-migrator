@@ -3,6 +3,10 @@ require 'logger'
 require 'active_record'
 require 'mysql'
 
+task :default do
+	puts "No default tasks"
+end
+
 namespace :db do
   def create_database config
     options = {:charset => 'utf8', :collation => 'utf8_unicode_ci'}
