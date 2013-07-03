@@ -12,8 +12,5 @@
 	"require": {
 		"php": ">=5.2"
 	},
-    "scripts":{
-        "post-install-cmd":["ln -s vendor/rajibahmed/rake-db-migrator/Rakefile"]
-    },
 	"minimum-stability": "dev"
 }
