@@ -82,7 +82,7 @@ namespace :db do
 
   desc "Generate migration files"
   task :generate,[:name] => :configure_connection do |t, args|
-    if args.nil?
+    unless args.nil?
         file_name = args[:name] unless args[:name].nil?
         class_name = args[:name].split('_').map(&:capitalize).join unless args[:name].nil?
     end
